@@ -1,0 +1,14 @@
+<section aria-labelledby="conference-list-title">
+	<h2 id="conference-list-title">Conférences disponibles</h2>
+	<div>
+		@for (conference of conferences; track conference.name) {
+			<button type="button" (click)="selectConference(conference)">
+				{{ conference.name }}
+			</button>
+		}
+	</div>
+</section>
+
+@if (selectedConference(); as conference) {
+	<app-details-conf [conf]="conference"></app-details-conf>
+}
